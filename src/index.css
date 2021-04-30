@@ -98,49 +98,23 @@ p {
 	color: var(--clr-grey-5);
 }
 
-/*
-===============
-Main page
-===============
-*/
-.section-title {
-	text-align: center;
-	margin: 4rem 0 6rem 0;
+.loading-container {
+	min-height: 50vh;
+	display: grid;
+	place-items: center;
 }
-.underline {
-	width: 8rem;
-	height: 0.25rem;
-	background: var(--clr-primary-5);
-	margin: 0 auto;
+.loading-container img {
+	width: 150px;
 }
 
-.section-center {
-	padding: 2rem 0;
-	width: 90vw;
-	margin: 0 auto;
-	max-width: 40rem;
-	/* margin-top: 3rem; */
-}
-@media screen and (min-width: 992px) {
-	.section-center {
-		width: 95vw;
-	}
+form {
+	margin-bottom: 1rem;
 }
 
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-th,
-td {
-	padding: 0.25rem;
-	text-align: left;
-	border: 1px solid #ccc;
-}
-
-td.wider-cell {
-	letter-spacing: var(--spacing);
+.btn-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .btn {
@@ -156,21 +130,96 @@ td.wider-cell {
 	cursor: pointer;
 }
 
-.btn-container {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+/*
+===============
+Home page
+===============
+*/
+header {
+	text-align: center;
+	margin: 2rem 0;
 }
-.page-btn {
-	width: 2rem;
-	height: 2rem;
-	background: var(--clr-primary-7);
-	border-color: transparent;
-	border-radius: 5px;
-	cursor: pointer;
-	margin: 0.5rem;
+
+.section-center {
+	padding: 2rem;
+	width: 90vw;
+	margin: 5rem auto;
+	max-width: 40rem;
+	background: var(--clr-white);
+	border-radius: var(--radius);
+	box-shadow: var(--light-shadow);
 	transition: var(--transition);
 }
+
+.section-center:hover {
+	box-shadow: var(--dark-shadow);
+}
+
+/*
+===============
+Table
+===============
+*/
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	padding: 0.25rem 0.3rem;
+	text-align: left;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+th {
+	background: var(--clr-primary-5);
+}
+
+td.wider-cell span:not(:last-child) {
+	letter-spacing: 0.5rem;
+}
+
+.book-link:not(:last-child) {
+	padding-right: 0.5rem;
+}
+
+/*
+===================
+Filters component
+===================
+*/
+
+.filter-form {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-control label {
+	margin-right: 0.5rem;
+}
+
+.name-filter-input {
+	padding: 0.25rem;
+	padding-left: 1rem;
+	background: var(--clr-grey-10);
+	border-color: transparent;
+	font-size: 1rem;
+	color: var(--clr-grey-5);
+}
+
+.name-filter-input::placeholder {
+	font-family: var(--ff-secondary);
+	color: var(--clr-grey-5);
+}
+
+/*
+=====================
+Pagination Component
+=====================
+*/
 
 .pagination-btn {
 	background: transparent;
@@ -185,11 +234,4 @@ td.wider-cell {
 
 .pagination-btn:hover {
 	color: var(--clr-primary-5);
-}
-
-@media screen and (min-width: 775px) {
-	.btn-container {
-		margin: 0 auto;
-		max-width: 700px;
-	}
 }
